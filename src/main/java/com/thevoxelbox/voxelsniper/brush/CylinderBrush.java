@@ -35,20 +35,6 @@ public class CylinderBrush extends PerformerBrush {
         if (yEndPoint < yStartingPoint) {
             yEndPoint = yStartingPoint;
         }
-        if (yStartingPoint < 0) {
-            yStartingPoint = 0;
-            v.sendMessage(ChatColor.DARK_PURPLE + "Warning: off-world start position.");
-        } else if (yStartingPoint > this.getWorld().getMaxHeight() - 1) {
-            yStartingPoint = this.getWorld().getMaxHeight() - 1;
-            v.sendMessage(ChatColor.DARK_PURPLE + "Warning: off-world start position.");
-        }
-        if (yEndPoint < 0) {
-            yEndPoint = 0;
-            v.sendMessage(ChatColor.DARK_PURPLE + "Warning: off-world end position.");
-        } else if (yEndPoint > this.getWorld().getMaxHeight() - 1) {
-            yEndPoint = this.getWorld().getMaxHeight() - 1;
-            v.sendMessage(ChatColor.DARK_PURPLE + "Warning: off-world end position.");
-        }
 
         final double bSquared = Math.pow(brushSize + (smoothCircle ? SMOOTH_CIRCLE_VALUE : VOXEL_CIRCLE_VALUE), 2);
 
